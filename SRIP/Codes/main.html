@@ -1,12 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-      <style>
+<style>
   .bg-1 { 
     background-color: #1abc9c;
     color: #ffffff;
@@ -28,14 +22,12 @@
 <body>
   <style>
 body {font-family: Arial;}
-
 /* Style the tab */
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
 }
-
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
@@ -47,17 +39,14 @@ body {font-family: Arial;}
   transition: 0.3s;
   font-size: 17px;
 }
-
 /* Change background color of buttons on hover */
 .tab button:hover {
   background-color: #ddd;
 }
-
 /* Create an active/current tablink class */
 .tab button.active {
   background-color: #ccc;
 }
-
 /* Style the tab content */
 .tabcontent {
   display: none;
@@ -77,7 +66,6 @@ body {font-family: Arial;}
 #myvideo{
   position:fixed;
   width:=500px;
-
 }
 </style>
 
@@ -96,17 +84,68 @@ body {font-family: Arial;}
       }
     </style>
   </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative; 
+  }
+  #section1 {padding-top:50px;height:750px;color: #fff; background-color: teal;}
+  #section2 {padding-top:50px;height:700px;color: #fff; background-color: black;}
+  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">FATIGUE TEST</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Theory</a></li>
+          <li><a href="#section2">Simulator</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+<div id="section1" class="container-fluid">
+  <h1>Theory</h1>
+  <p> The tensile test is a test performed to know the ductility of the particular material. In practical, the test is carried out on Universal Testing Machine (also called as UTM). When tension is applied to a particular member, the stresses are developed in the member at the center. At a particular point of time during the testing, the member breaks which is called as yield point.</br>
+
+Youngs Modulus: Youngs modulus is defined as the ratio of stress to strain. It is denoted by E.
+
+Tensile stress is the stress state caused by an applied load that tends to elongate the material in the axis of the applied load, in other words the stress caused by pulling the material.</br> The strength of structures of equal cross sectional area loaded in tension is independent of cross section geometry. Materials loaded in tension are susceptible to stress concentrations such as material defects or abrupt changes in geometry. However, materials exhibiting ductile behavior (metals for example) can tolerate some defects while brittle materials (such as ceramics) can fail well below their ultimate stress.</br>
+
+Strain: Strain is defined as the ratio of deformed length to the original length. </p>
+<img src="pic1.jpg" alt="diagram" width="500" height="350"> 
+</div>
+<div id="section2" class="container-fluid">
+  <h2> Simulator</h2>
   <body data-rsssl=1>
     <canvas id="myCanvas" width="2000" height="1000"></canvas>
     <script>
-
       /*window.requestAnimFrame = (function(callback) {
         return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
         function(callback) {
           window.setTimeout(callback, 1000 / 60);
         };
       })();
-
       function drawRectangle(myRectangle, context) {
         context.beginPath();
         context.rect(myRectangle.x, myRectangle.y, myRectangle.width, myRectangle.height);
@@ -120,19 +159,15 @@ body {font-family: Arial;}
         // update
         var time = (new Date()).getTime() - startTime;
         var amplitude = 150;
-
         // in ms
         var period = 2000;
         var centerX = canvas.width / 2 - myRectangle.width / 2;
         var nextX = amplitude * Math.sin(time * 2 * Math.PI / period) + centerX;
         myRectangle.x = nextX;
-
         // clear
         context.clearRect(0, 0, canvas.width, canvas.height);
-
         // draw
         drawRectangle(myRectangle, context);
-
         // request new frame
         requestAnimFrame(function() {
           animate(myRectangle, canvas, context, startTime);
@@ -140,7 +175,6 @@ body {font-family: Arial;}
       }
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       var myRectangle = {
         x: 100,
         y: 200,
@@ -148,9 +182,7 @@ body {font-family: Arial;}
         height: 100,
         borderWidth: 2
       };
-
       drawRectangle(myRectangle, context);
-
       // wait one second before starting animation
       setTimeout(function() {
         var startTime = (new Date()).getTime();
@@ -158,7 +190,6 @@ body {font-family: Arial;}
       }, 1000);*/
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(18, 80, 50, 300);
       context.fillStyle = 'lightyellow';
@@ -168,7 +199,6 @@ body {font-family: Arial;}
       context.stroke();
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(70, 130, 150, 150);
       context.fillStyle = 'lightblue';
@@ -178,7 +208,6 @@ body {font-family: Arial;}
       context.stroke();
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(223,100, 50, 200);
       context.fillStyle = 'lightyellow';
@@ -192,7 +221,6 @@ body {font-family: Arial;}
       var context = canvas.getContext('2d');
       
       
-
       context.beginPath();
       context.rect(275,160,210,20);
       context.fillStyle = 'grey';
@@ -200,10 +228,8 @@ body {font-family: Arial;}
       context.lineWidth = 1;
       context.strokeStyle = 'black';
       context.stroke();
-
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(18,375,1300,100);
       context.fillStyle = 'lightyellow';
@@ -211,10 +237,8 @@ body {font-family: Arial;}
       context.lineWidth = 5;
       context.strokeStyle = 'black';
       context.stroke();
-
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(480,100,40,240);
       context.fillStyle = 'lightyellow';
@@ -222,10 +246,8 @@ body {font-family: Arial;}
       context.lineWidth = 5;
       context.strokeStyle = 'black';
       context.stroke();
-
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(520, 150, 300, 100);
       context.fillStyle = 'grey';
@@ -233,10 +255,8 @@ body {font-family: Arial;}
       context.lineWidth = 4;
       context.strokeStyle = 'black';
       context.stroke();
-
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(823,100,80,240);
       context.fillStyle = 'lightyellow';
@@ -245,10 +265,8 @@ body {font-family: Arial;}
       context.strokeStyle = 'black';
       context.stroke();
       
-
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(907,130, 150, 150);
       context.fillStyle = 'lightblue';
@@ -258,10 +276,8 @@ body {font-family: Arial;}
       context.stroke();
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
       context.beginPath();
       context.rect(1270,80,50,300);
       context.fillStyle = 'lightyellow';
@@ -271,7 +287,26 @@ body {font-family: Arial;}
       context.stroke();
       var canvas = document.getElementById('myCanvas');
       var context = canvas.getContext('2d');
-
     </script>
+
+</body>
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: teal;
+   color: white;
+   text-align: center;
+}
+</style>
+<div class="footer">
+</div>
+
+
+
+
+  
   </body>
 </html>      
